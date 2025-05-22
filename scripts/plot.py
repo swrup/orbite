@@ -121,7 +121,7 @@ def plot_histo_densite_plusieurs():
     #lit les fichiers du profil de densite,
     #on les tri pour les mettre dans le bon ordre
     listcsv = sorted(glob.glob(DOSSIER + "/densities/*.csv"), key=os.path.getmtime)
-    #puis on en conserve que 4 
+    #puis on en conserve que 4
     listcsv = [listcsv[1], listcsv[len(listcsv)//4], listcsv[len(listcsv)//2],
             listcsv[-1]]
 

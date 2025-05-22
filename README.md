@@ -1,45 +1,44 @@
 # Orbite
 
-## Install and run
-
-Install Rust: https://www.rust-lang.org/tools/install
-
-Use Cargo to build and run.
-
-Build:
-
-	cargo build --release
-
-Run:
-
-	./target/release/orbite configuration_file.ini
-
-Or build and run at the same time:
-
-	cargo run --release configuration_file.ini
+Barnes–Hut simulation to study the formation and evolution of self-gravitating systems.
 
 ## Configuration file
 
-Use a configuration file to specify all the parameters of the simulation.
+A configuration file is used to specify all the parameters of the simulation.
+Simulation data will be written to the folder defined in the configuration file.
 See conf.ini for an example.
+It provides sensible default parameters to obtain an accurate simulation of a globular cluster's collapse.
 
-## Plots
+## Run
 
-Plot the energy, virial, density...  with plot.py: 
+Install Rust: https://www.rust-lang.org/tools/install
 
-    python plot.py folder_of_the_simulation
+Use Cargo to build and run:
 
-Analyse the orbits with periode.py:
+```sh
+cargo run --release conf.ini
+```
 
-    python periode.py folder_of_the_simulation 
+## Visualisation and data analysis
 
-## Videos
+Plot energy, virial, density...: 
 
-You can make a video of the simulation with gnuplot.sh:
+```sh
+python ./scripts/plot.py <simulation-folder>
+```
 
-    ./gnuplot.sh folder_of_the_simulation
+Analyse orbits:
 
-It use gnuplot to render an image at each saved time steps and then use ffmpeg to animate them.
+```sh
+python ./scripts/periode.py <simulation-folder>
+```
+
+Render a video of the simulation (use gnuplot + ffmpeg):
+
+```sh
+./scripts/gnuplot.sh <simulation-folder>
+```
+
 
 
 
