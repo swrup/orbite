@@ -159,7 +159,7 @@ impl Tree {
             p.position
                 .iter_mut()
                 .zip(self.center.iter())
-                .for_each(|(x, c)| *x = -0.95 * (*x) + 2.*c);
+                .for_each(|(x, c)| *x = -0.95 * (*x) + 2. * c);
         }
         self.add_particule_rec(0, particule_id);
     }
